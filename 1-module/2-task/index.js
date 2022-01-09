@@ -1,7 +1,7 @@
 /**
  * Эту функцию трогать не нужно
  */
-function print(text) {
+ function print(text) {
   console.log(text);
 }
 
@@ -10,17 +10,19 @@ function print(text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid(name) {
-  if (name !== null && name.indexOf(' ') === -1 && name.length > 4) {
-    console.log('OK')
+  let result = false;
+  if (name !== null&& name.length >=4 && name.indexOf(' ')===-1){
+    result = true;
   }
+  return result;
+}
 
-  function sayHello() {
-    let userName = prompt('Введите ваше имя');
+function sayHello() {
+  let userName = prompt('Введите ваше имя');
 
-    if (isValid(userName)) {
-      print(`Welcome back, ${userName}!`);
-    } else {
-      print('Некорректное имя');
-    }
+  if (isValid(userName)) {
+    print(`Welcome back, ${userName}!`);
+  } else {
+    print('Некорректное имя');
   }
 }
